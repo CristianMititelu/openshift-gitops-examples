@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bgd-subchart
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: bgd-helm
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: apps/bgd-subchart/
+    repoURL: https://github.com/CristianMititelu/openshift-gitops-examples
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
