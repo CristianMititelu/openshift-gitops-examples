@@ -1,4 +1,4 @@
-quarkus:
+bgd:
   build:
     enabled: false
   deploy:
@@ -7,4 +7,4 @@ quarkus:
         enabled: true
     replicas: 1
   image:
-    name: quay.io/ablock/gitops-helm-quarkus
+    name: quay.io/rhdevelopers/bgd:1.0.0
